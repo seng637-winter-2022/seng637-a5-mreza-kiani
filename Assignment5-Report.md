@@ -58,7 +58,50 @@ We tried different models to fit the data and 2 of them worked well:
 But we couldn't continue the rest of the project with this tool because it didn't support features like Laplace or 
 reliability graphs. So we again switched to use a new tool: CASRE which is a tool that is developed by NASA.
 
-[//]: # (TODO: Doing rest of the parts with CASRE)
+First we had to change the data format again to import that to the CASRE. For that, we had to remove the 4th and 5th 
+columns. After that, the imported data was like this:
+
+![img4](./media/report/Imported-Data-CASRE.png)
+
+Then we ran 2 tests on the data. The first one was Laplace. The Laplace test is a trend test. Trend tests is used to
+help determine whether the system undergoes reliability growth, decrease, or stable reliability. In the Laplace testing,
+positive values of the Laplace factor u(i) indicate an increasing failure intensity and negative values indicate a
+decreasing failure intensity, and the values between –2 and +2 indicate stable reliability. However, none of the data
+points were lower than -2, and the graphs of them did not give us useful information about the data points
+because a few of them are above 2 and most of them are between -2 to 2, so we decided to use the other trend test
+approach too to choose the useful range, Arithmetic Average of Time Between Failures.
+
+![img5](./media/report/Laplace-Test.png)
+
+As you can see in the next figure, the result is in much better shape than Laplace Test. From the Range 2 to 18, we have
+a decreasing failure count so that's the range which we want to use.
+
+![img6](./media/report/Arithmatic-Mean.png)
+
+In the next 2 figures, you can see the selected range using the Arithmetic Mean Test.
+
+![img7](./media/report/Data-Range.png)
+![img8](./media/report/Arthimatic-Mean-Range.png)
+
+You can see the Time between failures in the first figure that CASRE is used. In the next 3 figures, you can see the 
+failure intensity, reliability graphs, and total failures.
+
+![img9](./media/report/Failures.png)
+![img10](./media/report/Reliability-Graphs.png)
+![img11](./media/report/Total-Failures.png)
+
+### The advantages and disadvantages of reliability growth analysis
+
+Advantages
+* We could predict future reliability, failure intensity, and time between the failures with this analysis.
+* With this method, we could decide if the testing of the system is enough by measuring the reliability.
+* With this approach, we could find out if the system has reached the reliability that the customer or manager wants or not.
+* Decisions related to reliability growth are: tracking bugs in pre-release, guiding the software testing process, and releasing the product.
+
+Disadvantages
+* The result of it is not that reliable with a small dataset.
+* It was challenging to work with the tools because most of them only run in Windows OS systems.
+* Since this approach needs more data points compared to the Reliability Demonstration Chart, it might be more time-consuming to collect the data.
 
 # Assessment Using Reliability Demonstration Chart 
 
