@@ -18,6 +18,26 @@ for each group. Please see each lab document for details.)
 It works for everyone with logged-in university account on outlook. Please [tell us](mailto:mohammadreza.kianifa@ucalgary.ca) if you had any problem.
 
 # Introduction
+In the first phase of this assignment, we wanted to assess the reliability of a system. We are given the time between 
+the failures' data, and we must run the reliability assessment on it. There are 31 records in the dataset. 
+The first column is the time interval, the second column is failure count, the third column is the execution time 
+measured in hours, the fourth column is the failure identification work measured in person hours and the last column is
+computer time failure identification measured in hours.
+For analyzing this system, we used three tools:
+
+1. SRTAT
+2. C-SFRAT
+3. CASRE
+
+The first one which is a tool that is developed in Dr. Far's laboratory, wasn't complete, and after preparing the data,
+we couldn't get a diagram as an output from it. So we decided to use C-SFRAT. This tool worked better but it didn't have
+all the features we wanted such as Laplace. So we switched to the third tool which was in the artifact directory: C-SFRAT.
+
+For the second part of the assignment, we use Reliability Demonstration Chart (RDC) excel sheet to plot the failure 
+number versus the number of input events in normalized usage events. This tool helps us understand whether the target 
+failure rate or Mean Time to Failure (MTTF) is met or not.
+
+After completing these two phases, we compare the result.
 
 # Assessment Using Reliability Growth Testing 
 First, we tried to use the SRTAT tool which has been developed in Dr. Far's laboratory. After converting the input and 
@@ -43,8 +63,18 @@ reliability graphs. So we again switched to use a new tool: CASRE which is a too
 # Assessment Using Reliability Demonstration Chart 
 
 # Comparison of Results
+* At the end of the data range, the time between failures is increasing which means the reliability increases. But in RDC, based on MTTF value the cumulative data region signifies the reliability factor, i.e the SUT is acceptable/reject/continue.
+* Also, we could predict the reliability of the system for the next future minutes, which is not possible in the RDC method.
+* Since the dataset is small, RDC is more reliable in comparison with the reliability growth analysis.
+* The RDC technique is like a classification problem, which decides whether this software is reliable or not, accepts or rejects the current system, or needs more data to decide. But reliability growth testing is somehow like a regression problem that predicts the future reliability, failure rate, and time between the failures.
+* With the reliability growth analysis, we found out that the current failure rate is about 2.9 failures per minute, which is not acceptable if we consider the target failure rate’s value as 0.01. We could predict when we will reach this target if the current pattern continues. On the other hand, RDC itself does this calculation based on the risk inputs (Developer's Risk α and Users risk β) that we give them to the system.
 
 # Discussion on Similarity and Differences of the Two Techniques
+* The RDC technique is like a classification problem, which decides whether this software is reliable or not, accepts or rejects the current system, or if it needs more data to decide, but reliability growth testing is like a regression problem that predicts the future reliability.
+* Reliability growth testing is for assessing the current reliability, identifying and eliminating the faults, and predicting future reliability. On the other hand, Reliability Demonstration Chart is used toward the end of the growth testing period to verify that a specific reliability level has been achieved.
+* In RDC, the accurate time of the failures must be known. In the reliability growth testing, we could use other methods instead, for example, failure-count data.
+* A disadvantage of the RDC is that it can't be used to calculate the exact quantitative value for the reliability of the system under study, but in the reliability growth testing if the data is enough, it could predict it with high accuracy.
+* When we have a few data points, using RDC is better than the reliability growth testing, which needs more data points for the result to become valid.
 
 # How the team work/effort was divided and managed
 We used Discord as our communication tool and Zoom for our video calls and also to record the demo. 
