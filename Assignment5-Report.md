@@ -108,6 +108,28 @@ Disadvantages
 
 # Assessment Using Reliability Demonstration Chart 
 
+For the assessment done on the failure data with RDC, we utilized the values of Discrimination Ratio γ = 2.000, Developer's Risk α = 0.100 and User's Risk β = 0.100
+
+After several experiments we figured out that the MTTFmin is 2.2. The generated graph for it can be seen below.
+
+### MTTFmin
+
+![MTTFmin](./media/MTTFmin.png)
+
+As per the assigment instructions we experimented with doubling and halving the MTTFmin to see the results of the acceptability of the SUT. The results can be seen below
+
+### Half MTTFmin
+
+![Half MTTFmin](./media/HalfMTTFmin.png)
+
+### Double MTTFmin
+
+![Double MTTFmin](./media/DoubleMTTFmin.png)
+
+
+We observed that a low MTTFmin value would make the SUT more likely pass tests. Low MTTFmins values meant that the failure data would be graphed within the "Acceptance" portion of the RDC graph. In comparison, doubling the MTTFmin value actually made the SUT fail and would place the data line within the "Reject" portion of the graph. This is due to the SUT requiring fewer failures to be rejected with a high MTTFmin value whereas a low MTTFmin value would give a bigger leeway to the data and aloow the SUT to be accepted more often.
+ 
+
 # Comparison of Results
 * At the end of the data range, the time between failures is increasing which means the reliability increases. But in RDC, based on MTTF value the cumulative data region signifies the reliability factor, i.e the SUT is acceptable/reject/continue.
 * Also, we could predict the reliability of the system for the next future minutes, which is not possible in the RDC method.
@@ -124,15 +146,17 @@ Disadvantages
 
 # How the team work/effort was divided and managed
 We used Discord as our communication tool and Zoom for our video calls and also to record the demo. 
-Mohammad Reza and Shahryar focused on the RGT and Ammar focused on RDC. Also, Mohammad Reza and Shahryar helped Ammar 
+Mohammad Reza and Shahryar focused on the RGT and Ammaar focused on RDC. Also, Mohammad Reza and Shahryar helped Ammaar 
 after they did their part. At the end, we double-checked our result and divided the report among our-selves.
 
 # Difficulties encountered, challenges overcome, and lessons learned
 This assignment was different from the previous ones because it didn't involved testing tools like unit testing or 
-manual testing. Instead, we have to use new tools to fit failure diagram. Learining how to work with these tools and also
+manual testing. Instead, we have to use new tools to fit failure diagram. Learning how to work with these tools and also
 finding the tool that contains all of our needs, took plenty of times. Also, we use MacBook as our development system 
 but most of these tools work better on Windows. So we had to go to the university to do the project. Meanwhile, we were 
 sick, and it was really hard for us to maintain the project and do it before the deadline.
+
+We also faced difficulty in working with the RDC excel sheet. Some of the features would not work as intended. For example we were not able to change the bounds of the graph to correctly capture the data points. We were also unable to adjust the bounds for "Acceptance", "Continue" and "Reject". A lot of time was spent trying to make the outdated and buggy excel work as intended but in the end we had to hardcode the MTTFmin value to be able to successfully represent it on the graph. 
 
 The communication was another challenge that we faced. By using online tools like Discord and Zoom meeting we could 
 handle this problem. 
