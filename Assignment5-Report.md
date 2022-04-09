@@ -128,7 +128,18 @@ As per the assigment instructions we experimented with doubling and halving the 
 
 
 We observed that a low MTTFmin value would make the SUT more likely pass tests. Low MTTFmins values meant that the failure data would be graphed within the "Acceptance" portion of the RDC graph. In comparison, doubling the MTTFmin value actually made the SUT fail and would place the data line within the "Reject" portion of the graph. This is due to the SUT requiring fewer failures to be rejected with a high MTTFmin value whereas a low MTTFmin value would give a bigger leeway to the data and aloow the SUT to be accepted more often.
- 
+
+
+#### Advantages
+* It allows us to utilize the data to predict how long a certain system would be viable for a company.
+* Does not require a lot of data for it to be utilized
+* Allows data to graphed in a way that it allows the user to see if the SUT would be accepted by both the company and a customer. This is the "acceptance" portion of a graph
+* The RDC program is easy to use as it is a simple Excel sheet. Excel is a program that most people are familiar with. This helps users in using the RDC program as they do not need to learn a whole new software from scratch
+
+#### Disadvantages
+* Unlike Reliability Growth Analysis, it does not measure the reliability of a software
+* The RDC sheet is buggy and some of the features do not function at all. This makes using the software a pain as the chart can not be properly rendered.
+* The RDC sheet does not allow the user to modify the bounds of the graph or to adjust the scale of the axis. This makes the data representation not as accurate as it should be
 
 # Comparison of Results
 * At the end of the data range, the time between failures is increasing which means the reliability increases. But in RDC, based on MTTF value the cumulative data region signifies the reliability factor, i.e the SUT is acceptable/reject/continue.
