@@ -90,6 +90,9 @@ failure intensity, reliability graphs, and total failures.
 ![img10](./media/report/Reliability-Graphs.png)
 ![img11](./media/report/Total-Failures.png)
 
+### Target Failure Rate
+As you can see in the last figure above, the failure rate in our dataset is about 0.33 failure per minute. (total failures / total times). Based on the course lectures, reaching to (the failure rate / target failure rate) < 0.5, is considered satisfactory for releasing the product. If we consider 0.01 as a target failure rate’s value, since the current failure rate’s value is above this value, the system does not meet the condition. But with a lower failure rate, we can reach our target but that would need major improvements in the system. It worths mentioning that our model is not accurate enought because our dataset size was small.
+
 ### The advantages and disadvantages of reliability growth analysis
 
 Advantages
